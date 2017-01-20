@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/task_outer_container"
+                android:layout_width="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:gravity="center_vertical"
+                android:background="@drawable/background_transparent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+    >
+                <!--android:descendantFocusability="blocksDescendants">-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageDocIcon"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--app:srcCompat="@drawable/file_document_box" />-->
+
+    <LinearLayout
+        android:id="@+id/task_completed_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:text="Completed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="3dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:srcCompat="?android:attr/listDivider"
+            android:background="@color/list_divider"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/task_inner_container"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@+id/task_completed_divider">
+
+        <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="marquee"
+            android:text="Dummy Text"
+            android:textColor="@color/list_item_text"
+            android:textSize="13sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignEnd="@+id/delete_button"
+            android:layout_alignParentRight="true"
+            android:onClick="onTaskTextInListClick"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:fontFamily="sans-serif"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="10dp"/>
+
+        <ImageButton
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/delete_button"
+            android:id="@+id/checkButton"
+            android:onClick="onCheckBtnClick"
+            app:srcCompat="@drawable/check_circle_outline"
+            android:background="@drawable/background_transparent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="9dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:srcCompat="?android:attr/actionBarDivider"
+            android:layout_centerVertical="true"
+            android:id="@+id/icon_divider"
+            android:layout_alignParentRight="true"
+            android:background="@color/icon_divider"
+            android:layout_height="26dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="7dp"/>
+
+        <Button
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/delete_button"
+            android:background="@drawable/remove_icon"
+            android:onClick="onTrashBtnClick"
+            android:layout_gravity="center_vertical"
+            android:minHeight="24dp"
+            android:minWidth="24dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

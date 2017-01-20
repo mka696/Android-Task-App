@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.mkafrin.firstapp.MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/toolbarTheme"
+            android:minHeight="@dimen/bar_min_height"
+            android:id="@+id/toolbar2"
+            android:layout_width="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/rounded_textbox"
+            android:id="@+id/imageView2"
+            android:layout_alignParentStart="true"
+            android:minHeight="@dimen/bar_min_height"
+            android:layout_alignRight="@+id/toolbar2"
+            android:layout_alignLeft="@+id/toolbar2"
+            android:layout_alignTop="@+id/toolbar2"
+            android:layout_alignBottom="@+id/toolbar2"
+            android:layout_marginRight="45dp"
+            android:layout_marginLeft="0dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="10dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Enter a task.."
+            android:layout_alignBottom="@+id/toolbar2"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="20dp"
+            android:textSize="14sp"
+            android:textColorHint="#ffffff"
+            android:id="@+id/taskTextInput"
+            android:paddingRight="45dp"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="55dp"
+            android:layout_alignLeft="@+id/toolbar2"
+            android:layout_alignTop="@+id/toolbar2"
+            android:layout_alignRight="@+id/toolbar2"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="5dp"
+            android:ems="10"
+            android:background="#00ffffff"/>
+
+        <FrameLayout
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/imageView2"
+            >
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            app:srcCompat="@drawable/plus"
+            android:id="@+id/floatingActionButton3"
+            app:backgroundTint="@android:color/background_light"
+            android:onClick="onAddTaskBtnClick"
+            app:fabSize="mini"/>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/android:list"
+        android:layout_below="@+id/relativeLayout"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:padding="10dp"
+        android:dividerHeight="3dp"
+        android:divider="@android:color/transparent"/>
+
+</RelativeLayout>

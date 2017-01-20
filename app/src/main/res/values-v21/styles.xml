@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FirstApp.AppTheme.Light" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorBackground">@color/Very_Light_Grey</item>
+        <item name="android:statusBarColor">?android:attr/navigationBarColor</item>
+    </style>
+</resources>
