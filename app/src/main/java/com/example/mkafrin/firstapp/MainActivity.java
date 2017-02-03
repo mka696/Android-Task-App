@@ -82,9 +82,31 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             case R.id.action_delete_all:
                 deleteAllTasks();
                 break;
+            case R.id.action_delete_completed:
+                deleteCompletedTasks();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void deleteCompletedTasks() {
+        DialogInterface.OnClickListener dialogClickListener =
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int button) {
+                        if (button == DialogInterface.BUTTON_POSITIVE) {
+                            getContentResolver().delete(TasksProvider.CONTENT_URI, DBConnector.TASK_COMPLETED+"=1", null);
+                            restartLoader();
+                            singleToast(getString(R.string.completed_deleted), Toast.LENGTH_SHORT);
+                        }
+                    }
+                };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.are_you_sure))
+                .setPositiveButton(getString(android.R.string.yes), dialogClickListener)
+                .setNegativeButton(getString(android.R.string.no), dialogClickListener)
+                .show();
     }
 
     private void deleteAllTasks() {

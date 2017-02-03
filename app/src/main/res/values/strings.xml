@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Sticky Task</string>
     <string name="create_sample_data">Sample Data</string>
-    <string name="action_delete_all_notes">Delete all notes</string>
+    <string name="action_delete_all_notes">Delete all tasks</string>
     <string name="are_you_sure">Are you sure?</string>
     <string name="all_deleted">All notes deleted</string>
     <string name="task_added">Task Added</string>
@@ -13,4 +13,6 @@
     <string name="action_delete">Delete</string>
     <string name="action_save">Save</string>
     <string name="task_deleted">Task Deleted</string>
+    <string name="action_delete_completed_tasks">Delete completed tasks</string>
+    <string name="completed_deleted">All completed tasks deleted</string>
 </resources>
