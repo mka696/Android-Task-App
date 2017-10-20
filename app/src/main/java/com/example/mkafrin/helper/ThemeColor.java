@@ -11,10 +11,6 @@ import android.preference.ListPreference;
 import android.util.TypedValue;
 import com.example.mkafrin.firstapp.R;
 
-/**
- * Created by Michael Afrin on 4/2/2017.
- */
-
 public class ThemeColor {
     public static void setTheme(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);

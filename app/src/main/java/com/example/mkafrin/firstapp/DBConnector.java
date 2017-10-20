@@ -4,9 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Michael Afrin on 12/28/2016.
- */
+
 public class DBConnector extends SQLiteOpenHelper{
 
     public static final String DATABASE_NAME = "tasks.db";
