@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingTop="10dp"
+              android:paddingLeft="24dp"
+              android:paddingRight="24dp"
+              android:paddingBottom="20dp">
+
+    <TextView
+        android:text="TextView test about page all the stuff im talking about is really cool i know this is awesome really awesome and we all feel that way"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textAlignment="viewStart"
+        android:id="@+id/about_body"/>
+
+</LinearLayout>

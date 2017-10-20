@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ThemeColors">
+        <item>Rolling Green</item>
+        <item>Sky Blue</item>
+        <item>Autumn Orange</item>
+        <item>Racing Red</item>
+        <item>Orchid Purple</item>
+        <item>Royal Blue</item>
+    </string-array>
+</resources>

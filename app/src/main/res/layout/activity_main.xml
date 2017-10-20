@@ -26,7 +26,6 @@
         <android.support.v7.widget.Toolbar
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            android:theme="@style/toolbarTheme"
             android:minHeight="@dimen/bar_min_height"
             android:id="@+id/toolbar2"
             android:layout_width="wrap_content"
@@ -63,7 +62,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:paddingLeft="20dp"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:textColorHint="#ffffff"
             android:id="@+id/taskTextInput"
             android:paddingRight="45dp"
@@ -76,7 +75,9 @@
             android:layout_marginBottom="7dp"
             android:layout_marginLeft="5dp"
             android:ems="10"
-            android:background="#00ffffff"/>
+            android:background="#00ffffff"
+            android:textCursorDrawable="@null"
+            android:textStyle="bold"/>
 
         <FrameLayout
             android:layout_height="50dp"
@@ -106,6 +107,8 @@
         android:focusableInTouchMode="true"
         android:padding="10dp"
         android:dividerHeight="3dp"
-        android:divider="@android:color/transparent"/>
+        android:divider="@android:color/transparent"
+        android:fastScrollAlwaysVisible="false"
+        android:fastScrollEnabled="false"/>
 
 </RelativeLayout>

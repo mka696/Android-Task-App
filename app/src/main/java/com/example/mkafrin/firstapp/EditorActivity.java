@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.example.mkafrin.helper.ThemeColor;
 import com.vstechlab.easyfonts.EasyFonts;
 
 public class EditorActivity extends AppCompatActivity {
@@ -26,11 +27,9 @@ public class EditorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeColor.setTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.info_toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         editor = (EditText) findViewById(R.id.editText);

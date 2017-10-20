@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     defaultConfig {
-        applicationId "com.example.mkafrin.firstapp"
+        applicationId "com.example.mkafrin.task-app"
         minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
@@ -32,7 +32,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.1.0'
     compile 'com.vstechlab.easyfonts:easyfonts:1.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:support-vector-drawable:25.1.0'
+    testCompile 'junit:junit:4.12'
 }

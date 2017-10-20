@@ -1,20 +1,61 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#c5c5c5</item>
+        <item name="colorPrimaryDark">#9c9c9c</item>
+        <item name="colorAccent">#797979</item>
         <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
     </style>
 
-    <style name="toolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="android:textColorSecondary">@android:color/white</item>
-        <item name="android:background">@color/colorPrimary</item>
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="OverlayPrimaryColorTealGreen">
+        <item name="colorPrimary">@color/tealGreen</item>
+        <item name="colorPrimaryDark">@color/tealGreenDark</item>
+        <item name="colorAccent">@color/tealGreenAccent</item>
+    </style>
+
+    <style name="OverlayPrimaryColorSkyBlue">
+        <item name="colorPrimary">@color/skyBlue</item>
+        <item name="colorPrimaryDark">@color/skyBlueDark</item>
+        <item name="colorAccent">@color/skyBlueAccent</item>
+    </style>
+
+    <style name="OverlayPrimaryColorAutumnOrange">
+        <item name="colorPrimary">@color/autumnOrange</item>
+        <item name="colorPrimaryDark">@color/autumnOrangeDark</item>
+        <item name="colorAccent">@color/autumnOrangeAccent</item>
+    </style>
+
+    <style name="OverlayPrimaryColorRacingRed">
+        <item name="colorPrimary">@color/racingRed</item>
+        <item name="colorPrimaryDark">@color/racingRedDark</item>
+        <item name="colorAccent">@color/racingRedAccent</item>
+    </style>
+
+    <style name="OverlayPrimaryColorOrchidPurple">
+        <item name="colorPrimary">@color/orchidPurple</item>
+        <item name="colorPrimaryDark">@color/orchidPurpleDark</item>
+        <item name="colorAccent">@color/orchidPurpleAccent</item>
+    </style>
+
+    <style name="OverlayPrimaryColorRoyalBlue">
+        <item name="colorPrimary">@color/royalBlue</item>
+        <item name="colorPrimaryDark">@color/royalBlueDark</item>
+        <item name="colorAccent">@color/royalBlueAccent</item>
+    </style>
+
+
+
+
+    <style name="AppTheme.ListPreference" parent="AppTheme">
+        <item name="android:textColorSecondary">#595959</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

@@ -1,5 +1,6 @@
 package com.example.mkafrin.firstapp;
 
+import android.app.Dialog;
 import android.app.LoaderManager;
 import android.content.*;
 import android.content.pm.ApplicationInfo;
@@ -10,23 +11,24 @@ import android.os.Bundle;
 import android.os.Debug;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
+import android.view.*;
 import android.widget.*;
+import com.example.mkafrin.helper.ThemeColor;
 import com.vstechlab.easyfonts.EasyFonts;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     public static final int EDITOR_REQUEST_CODE = 1001;
+    public static final int SETTINGS_REQUEST_CODE = 1002;
     private CursorAdapter cursorAdapter;
     private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeColor.setTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     protected void onResume() {
+        ThemeColor.setTheme(this);
         super.onResume();
         ListView list = (ListView) findViewById(android.R.id.list);
         list.getParent().requestChildFocus(list, list);
@@ -84,9 +87,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 break;
             case R.id.action_delete_completed:
                 deleteCompletedTasks();
+                break;
+            case R.id.action_settings:
+                goToSettingsActivity();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void goToSettingsActivity() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivityForResult(intent, SETTINGS_REQUEST_CODE);
     }
 
     private void deleteCompletedTasks() {
@@ -192,18 +204,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         int completed = (cursor.getInt(cursor.getColumnIndex(DBConnector.TASK_COMPLETED)));
         return completed;
     }
-
-//    private void setCompleted(boolean bool, String filter) {
-//        int completedValue;
-//        if(bool)
-//            completedValue = 1;
-//        else
-//            completedValue = 0;
-//        ContentValues values = new ContentValues();
-//        values.put(DBConnector.TASK_COMPLETED, completedValue);
-//        getContentResolver().update(TasksProvider.CONTENT_URI, values, filter, null);
-//        setResult(RESULT_OK);
-//    }
 
     private void updateTaskCompleted(int taskCompleted, long id) {
 

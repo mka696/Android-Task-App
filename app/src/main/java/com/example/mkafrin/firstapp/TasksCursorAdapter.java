@@ -2,6 +2,9 @@ package com.example.mkafrin.firstapp;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,20 +14,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.vstechlab.easyfonts.EasyFonts;
 
+import java.util.logging.Handler;
+
 public class TasksCursorAdapter extends CursorAdapter{
 
     int past_completed = 0;
+    Typeface robotoRegular;
 
     public TasksCursorAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
+        robotoRegular = EasyFonts.robotoRegular(context);
     }
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
         return LayoutInflater.from(context).inflate(R.layout.note_list_item, viewGroup, false);
         //return LayoutInflater.from(context).inflate(R.layout.list_separator, viewGroup, false);
-        // TODO: add functionality to inflate header layout
     }
+
+
 
     @Override
     public void bindView(View view, final Context context, final Cursor cursor) {
@@ -36,23 +44,25 @@ public class TasksCursorAdapter extends CursorAdapter{
 
         ImageButton checkBtn = (ImageButton) view.findViewById(R.id.checkButton);
 
-        LinearLayout test = (LinearLayout) view.findViewById(R.id.task_completed_divider);
+
+        TextView tv = (TextView) view.findViewById(R.id.tvNote);
 
         int completed = cursor.getInt(cursor.getColumnIndex(DBConnector.TASK_COMPLETED));
         if(completed==1) {
+            LinearLayout completed_divider = (LinearLayout) view.findViewById(R.id.task_completed_divider);
             if(past_completed==0) {
-                test.setVisibility(View.VISIBLE);
+                completed_divider.setVisibility(View.VISIBLE);
             } else if(past_completed==1) {
-                test.setVisibility(View.GONE);
+                completed_divider.setVisibility(View.GONE);
             }
             checkBtn.setImageResource(R.drawable.check_circle);
+            tv.setTextColor(R.color.completed_text);
         } else {
             checkBtn.setImageResource(R.drawable.check_circle_outline);
         }
 
-        TextView tv = (TextView) view.findViewById(R.id.tvNote);
         tv.setText(taskText);
-        tv.setTypeface(EasyFonts.robotoRegular(context));
+        tv.setTypeface(robotoRegular);
         past_completed = completed;
     }
 

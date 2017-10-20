@@ -61,7 +61,7 @@
             android:ellipsize="marquee"
             android:text="Dummy Text"
             android:textColor="@color/list_item_text"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:layout_alignParentEnd="true"
             android:layout_alignEnd="@+id/delete_button"
             android:layout_alignParentRight="true"
@@ -71,12 +71,15 @@
             android:fontFamily="sans-serif"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="10dp"/>
+            android:layout_marginEnd="5dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingStart="5dp"
+            />
 
         <ImageButton
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_alignEnd="@+id/delete_button"
             android:id="@+id/checkButton"
@@ -84,7 +87,10 @@
             app:srcCompat="@drawable/check_circle_outline"
             android:background="@drawable/background_transparent"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="9dp"/>
+            android:layout_marginEnd="4dp"
+            android:padding="5dp"
+            android:adjustViewBounds="false"
+            />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -95,17 +101,22 @@
             android:background="@color/icon_divider"
             android:layout_height="26dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="7dp"/>
+            />
 
-        <Button
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
             android:id="@+id/delete_button"
-            android:background="@drawable/remove_icon"
             android:onClick="onTrashBtnClick"
+            app:srcCompat="@drawable/remove_icon"
+            android:background="@drawable/background_transparent"
             android:layout_gravity="center_vertical"
-            android:minHeight="24dp"
-            android:minWidth="24dp"/>
+            android:adjustViewBounds="false"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:layout_marginEnd="-5dp"/>
+
     </LinearLayout>
 
 </RelativeLayout>
