@@ -3,6 +3,8 @@
     <string name="create_sample_data">Sample Data</string>
     <string name="action_delete_all_notes">Delete all tasks</string>
     <string name="are_you_sure">Are you sure?</string>
+    <string name="are_you_sure_completed">Are you sure you want to delete all completed tasks?</string>
+    <string name="are_you_sure_all">Are you sure you want to delete all tasks?</string>
     <string name="all_deleted">All notes deleted</string>
     <string name="task_added">Task Added</string>
     <string name="title_activity_editor">EditorActivity</string>

@@ -1,14 +1,19 @@
 package com.example.mkafrin.firstapp;
 
+import android.app.ActivityManager;
 import android.app.Dialog;
 import android.app.LoaderManager;
 import android.content.*;
 import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.media.Image;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Debug;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -115,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(getString(R.string.are_you_sure))
+        builder.setMessage(getString(R.string.are_you_sure_completed))
                 .setPositiveButton(getString(android.R.string.yes), dialogClickListener)
                 .setNegativeButton(getString(android.R.string.no), dialogClickListener)
                 .show();
@@ -135,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(getString(R.string.are_you_sure))
+        builder.setMessage(getString(R.string.are_you_sure_all))
                 .setPositiveButton(getString(android.R.string.yes), dialogClickListener)
                 .setNegativeButton(getString(android.R.string.no), dialogClickListener)
                 .show();
